@@ -1,5 +1,6 @@
 package __stackQueue;
 
+import java.util.EmptyStackException;
 import java.util.Iterator;
 
 public class MyStack<E> implements Stack<E> {
@@ -40,7 +41,12 @@ public class MyStack<E> implements Stack<E> {
 
 	@Override
 	public E top() {
-		return S[top];
+		if (empty()){
+			System.out.println("Stack is currently empty");
+			return null;
+		}	
+		else
+			return S[top];
 	}
 
 	@Override
